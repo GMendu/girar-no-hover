@@ -1,0 +1,72 @@
+body{
+    width: 100wh;
+    height: 100vh;
+    background-color: grey;
+}
+
+.centralizar{
+    width: 100%;
+    height: 100%;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgrey;
+}
+
+.perspectiva{
+    width: 500px;
+    height: 500px;
+    perspective: 1000px;
+    perspective-origin: center;
+}
+
+.perspectiva .imagem{
+    background-color: thistle;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in;
+}
+
+.esquerda{position: absolute;
+    z-index: 1;
+    left: 0px;
+    width: 100px;
+    height: 500px;
+}
+.direita{
+    z-index: 1;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 500px;
+}
+.cima{
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 300px;
+    height: 100px;
+
+}
+.baixo{
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    width: 300px;
+    height: 100px;
+}
+
+.esquerda:hover ~ .imagem{
+    transform: rotateY(180deg);
+}
+.direita:hover ~ .imagem{
+    transform: rotateY(-180deg);
+}
+.cima:hover ~ .imagem{
+    transform: rotateX(180deg);
+}
+.baixo:hover ~ .imagem{
+    transform: rotateX(-180deg);
+}
